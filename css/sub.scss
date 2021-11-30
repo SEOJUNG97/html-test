@@ -1,0 +1,169 @@
+@import '_common.scss';
+
+// sub.scss
+.visual > img{width:100%;}
+
+.services{
+    padding:100px 0;
+    text-align: center;
+    @include h2;
+    font-family: 'Bahnschrift';
+
+    ul{
+        width:$content-width;
+        margin:60px auto;
+        @include flex (space-between,flex-start,row,nowrap);
+        li{
+            width:30%;
+            &::before{
+                content:'';
+                width:53px; height:53px;
+                display: block;
+                margin:5% auto;
+            }
+            b{font-weight:bold;
+            p{
+                color: #555;
+                line-height: 1.6;
+                margin-top:2%;
+            }
+        }
+        li:nth-child(1)::before{
+            background: url('../img/ic_01.png')no-repeat;
+        }
+        li:nth-child(2)::before{
+            background: url('../img/ic_02.png')no-repeat;
+        }
+        li:nth-child(3)::before{
+            background: url('../img/ic_03.png')no-repeat;
+        }
+    }
+
+}
+
+.about{
+    padding:$p100;
+    // text-align: center;
+    background: honeydew;
+
+    .profile{
+        width:$content-width;
+        margin:0 auto;
+        @include flex(space-between,center,row,nowrap);
+
+
+        .left{width:40%;}
+        .right{
+            width:$content-width;
+            margin-top: 40px;
+            @include flex(space-between,center,row,nowrap);
+            ul{
+                li{margin-bottom: 20px;}
+                li > p{background-color: #ddd;}
+                li > p > span{
+                    background: #fed136;
+                    color: #fff;
+                    text-align: right;
+                    padding: 1%;
+                    display: block;
+                }
+                $skill : (1:90%,2:70%,3:90%,4:40%);
+                @each $k, $v in $skill {
+                    li:nth-child(#{$k})>p>span{width:$v;}
+                }
+                // li:nth-child(2)>p>span{width:70%;}
+                // li:nth-child(3)>p>span{width:90%;}
+                // li:nth-child(4)>p>span{width:40%;}
+            }
+        }
+    }
+
+
+// =====mobile=====
+
+
+@include media ($mobile,$tablet-w){
+    $title : 34px;
+    $p100 : 40px 0;    
+    
+    .visual > img{width:100%;}
+
+        .services{
+            padding:$p100;
+            text-align: center;
+            @include h2;
+            
+            ul{
+                width:$content-width;
+                margin:60px auto;
+                @include flex (space-between,flex-start,column,nowrap);
+                li{
+                    width:100%;
+                    &::before{
+                        content:'';
+                        width:53px; height:53px;
+                        display: block;
+                        margin:5% auto;
+                    }
+                    b{font-weight:bold;
+                    p{
+                        color: #555;
+                        line-height: 1.6;
+                        margin-top:2%;
+                    }
+                }
+                li:nth-child(1)::before{
+                    background: url('../img/ic_01.png')no-repeat;
+                }
+                li:nth-child(2)::before{
+                    background: url('../img/ic_02.png')no-repeat;
+                }
+                li:nth-child(3)::before{
+                    background: url('../img/ic_03.png')no-repeat;
+                }
+            }
+
+        }
+
+        .about{
+            @include media{
+
+            
+            }
+            .profile{
+                width:$content-width;
+                margin:0 auto;
+                @include fex(space-between,center,column,nowrap);
+
+
+                .left{
+                    width:100%;
+                    img{width:100%;}
+                }
+
+                .right{
+                    width:100%;
+                    @include h2;
+                    ul{
+                        li{margin-bottom: 20px;}
+                        li > p{background-color: #ddd;}
+                        li > p > span{
+                            background: #fed136;
+                            color: #fff;
+                            text-align: right;
+                            padding: 1%;
+                            display: block;
+                        }
+                        $skill : (1:90%,2:70%,3:90%,4:40%);
+                        @each $k, $v in $skill {
+                            li:nth-child(#{$k})>p>span{width:$v;}
+                        }
+                        // li:nth-child(2)>p>span{width:70%;}
+                        // li:nth-child(3)>p>span{width:90%;}
+                        // li:nth-child(4)>p>span{width:40%;}
+                    }
+                }
+            }
+        }
+    }
+}    

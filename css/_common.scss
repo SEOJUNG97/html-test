@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Bahnschrift';
+    src: url('font/Bahnschrift.woff2') format('woff2'),
+        url('font/Bahnschrift.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html,body{margin:0;}
+h1,h2,h3,h4,h5,h6,p,figure{margin:0;}
+ul,li{
+    list-style-type:none;
+    padding:0; margin:0;
+}
+a{
+    color:#333; 
+    text-decoration: none;
+}
+img{vertical-align: middle;}
+table{border-collapse: collapse;}
+*{box-sizing: border-box;}
+
+$point-color :#fed136;
+$content-width : 70%;
+$title : 54px;
+$p100 : 100px 0;
+
+@import '_media';
+$point-color :#fed136;
+$content-width : 70%;
+$title : 54px;
+$p100 : 100px 0;
+
+@mixin h2 {
+    h2{ font-size:$title; }
+    >p{margin:1% 0 5%;}
+}
+
+@include flex($just,$items,$dir,$wrap){
+    display: flex;
+    justify-content:$just;
+}
+header > div {
+    width: 70%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+}
+
+header > div h1 a {
+    font-size: 0;
+    width: 93px;
+    height: 36px;
+    background: url("../img/logo.png") no-repeat;
+    display: block;
+}
+
+header > div nav a {
+    color: #fff;
+    padding: 0 24px;
+    display: inline-block;
+}
+footer {
+    padding: 3% 0%;
+    text-align: center;
+}
+
+// =====mobile=====
